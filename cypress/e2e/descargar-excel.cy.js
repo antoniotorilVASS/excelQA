@@ -8,7 +8,7 @@ require('cypress-xpath') // Para poder usar Xpath
  // cy.get(':nth-child(1) > .fa-hard-hat').should('have.css','font-size','1.2rem;')
             // .and('have.css','padding-right','.1rem').and('have.css','padding-left','.1rem')
 /// <reference types="cypress" />
-describe('Test in WebSite', function(){
+describe.skip('Test in WebSite', function(){
     
     it('Log in LM', () => {
         cy.visit('http://localhost:8081/login')
@@ -150,7 +150,7 @@ describe('Test in WebSite', function(){
         "317",
         "318"
         ]
-        tienda.forEach(function(elemento, indice, array){
+        tienda.forEach(function(elemento){
             cy.get('.select').select(elemento)
             cy.get('.mx-input').should('be.visible').clear().type('2022-08-01 ~ 2022-08-15')
             cy.get('.mx-datepicker-btn').should('be.visible').click()
